@@ -1,19 +1,17 @@
-
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
 -include vendor/vivo/v3maxa/BoardConfigVendor.mk
 
-# Architecture
+# Architecture 
 TARGET_ARCH := arm
-TARGET_BOARD_PLATFORM := msm8939
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
+TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_VARIANT := cortex-a9
+TARGET_CPU_VARIANT := generic
 TARGET_CPU_SMP := true
-ARCH_ARM_HAVE_TLS_REGISTER := true
+TARGET_BOOTLOADER_BOARD_NAME := msm8916
+TARGET_NO_BOOTLOADER := true
 
 TARGET_BOOTLOADER_BOARD_NAME := v3maxa
 
@@ -30,7 +28,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 #kernel
 TARGET_PREBUILT_KERNEL := device/vivo/v3maxa/kernel
-
 TARGET_RECOVERY_FSTAB := device/vivo/v3maxa/twrp.fstab
 BOARD_MKBOOTIMG_ARGS := --dt device/vivo/v3maxa/dt.img --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 --tags_offset 0x00000100    
 BOARD_HAS_NO_SELECT_BUTTON := true
@@ -39,10 +36,9 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 #cofface config
 TW_EXTRA_LANGUAGES := true
 TW_DEFAULT_LANGUAGE := zh_CN
-#####################
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/vivo/v3maxa/dt.img
+
 #TARGET_USES_UNCOMPRESSED_KERNEL := true
-# TWRP
 RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
@@ -56,3 +52,4 @@ TW_INPUT_BLACKLIST := "accelerometer"
 TW_NO_EXFAT_FUSE := true
 TW_EXTRA_LANGUAGES := true 
 TW_DEFAULT_LANGUAGE := zh_CN 
+TARGET_RECOVERY_INITRC := device/vivo/v3maxa/recovery/init.qcom.rc
