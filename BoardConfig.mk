@@ -1,17 +1,19 @@
+
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
 -include vendor/vivo/v3maxa/BoardConfigVendor.mk
 
-# Architecture 
+# Architecture
 TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_BOARD_PLATFORM := msm8939
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := generic
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_CPU_VARIANT := cortex-a9
 TARGET_CPU_SMP := true
-TARGET_BOOTLOADER_BOARD_NAME := msm8916
-TARGET_NO_BOOTLOADER := true
+ARCH_ARM_HAVE_TLS_REGISTER := true
 
 TARGET_BOOTLOADER_BOARD_NAME := v3maxa
 
